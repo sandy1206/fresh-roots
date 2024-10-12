@@ -39,13 +39,14 @@ export const Navbar = (props: Navbar2Props) => {
 		<nav className="flex w-full items-center border-b border-gray-300 bg-green-100 lg:min-h-18 lg:px-[5%]">
 			<div className="mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4">
 				<div className="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0">
-					<a href={logo.url}>
+					<a href={logo.url} className="flex items-center">
 						<img src={logo.src} alt={logo.alt} className="h-12 w-auto" />
+						<span className="ml-2 text-2xl font-bold text-green-700">Fresh Roots Farm</span>
 					</a>
 					<div className="flex items-center gap-4 lg:hidden">
 						<div>
 							{buttons.map((button, index) => (
-								<Button key={index} className="w-full rounded bg-green-500 text-white hover:bg-green-600 px-4 py-1" {...button}>
+								<Button key={index} className="bg-green-600 text-white hover:bg-green-700 px-6 py-2 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-105" {...button}>
 									{button.title}
 								</Button>
 							))}
@@ -101,7 +102,11 @@ export const Navbar = (props: Navbar2Props) => {
 				</motion.div>
 				<div className="hidden justify-self-end lg:block">
 					{buttons.map((button, index) => (
-						<Button key={index} className="bg-green-500 text-white hover:bg-green-600 px-6 py-2" {...button}>
+						<Button
+							key={index}
+							className="bg-green-600 text-white hover:bg-green-700 px-6 py-2 rounded-full shadow-lg transform transition-transform duration-200 hover:scale-105"
+							{...button}
+						>
 							{button.title}
 						</Button>
 					))}
@@ -175,7 +180,7 @@ const SubMenu = ({ navLink, isMobile }: { navLink: NavLink; isMobile: boolean })
 export const Navbar2Defaults: Navbar2Props = {
 	logo: {
 		url: "#",
-		src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
+		src: "./logo.png",
 		alt: "Logo image",
 	},
 	navLinks: [
@@ -192,8 +197,8 @@ export const Navbar2Defaults: Navbar2Props = {
 	],
 	buttons: [
 		{
-			title: "Join",
-			size: "sm",
+			title: "Order Now",  // Updated text
+			size: "sm",         // Size of the button
 		}
 	],
 };
@@ -217,11 +222,11 @@ const topLineVariants = {
 const middleLineVariants = {
 	open: {
 		width: 0,
-		transition: { duration: 0.1 },
+		transition: { duration: 0.2 },
 	},
 	closed: {
-		width: "1.5rem",
-		transition: { delay: 0.3, duration: 0.2 },
+		width: 20,
+		transition: { duration: 0.2 },
 	},
 };
 
