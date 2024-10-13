@@ -58,3 +58,47 @@ body {
 .animate-fade-in {
   animation: fade-in 0.6s ease forwards;
 }
+
+/* globals.css */
+.line-container {
+  position: absolute;
+}
+
+.line {
+  width: 0;
+  height: 2px;
+  background-color: #28a745;
+  position: absolute;
+  transform-origin: center left;
+  transition: width 0.7s ease;
+}
+
+.line.animate-line {
+  width: 150px; /* Adjust this length as needed */
+}
+
+.product-label {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: #2a5934;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s ease;
+}
+
+.line-container.line-0 {
+  top: 15%;
+  left: 10%;
+}
+
+.line-container.line-1 {
+  top: 10%;
+  right: 5%;
+}
+
+/* Add remaining positions for lines */
